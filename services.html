@@ -1,0 +1,93 @@
+# Digismartz Technologies — Website
+
+**Transforming Ideas into Digital Success.**
+
+A fast, modern, mobile-responsive static website for Digismartz Technologies — a full-service digital marketing and branding company. Built with plain HTML, CSS, and JavaScript (no build step required), ready to deploy on **GitHub Pages** or **Cloudflare Pages**.
+
+## Pages
+
+| Page | File |
+|---|---|
+| Home | `index.html` |
+| About Us | `about.html` |
+| Services (all 14) | `services.html` |
+| Portfolio (with filters) | `portfolio.html` |
+| Contact + Free Consultation form | `contact.html` |
+
+## Features
+
+- Black + Electric Blue premium dark theme, mobile responsive
+- Floating **WhatsApp** and **Call** buttons on every page
+- Free consultation form, contact info, newsletter signup, FAQ accordion
+- Portfolio category filters, scroll-reveal animations, animated "signal" motif
+- SEO meta tags, `robots.txt`, `sitemap.xml`
+- No frameworks, no build step — loads fast, Core Web Vitals friendly
+
+## Deploy — Option A: Cloudflare Pages (preferred)
+
+1. Push this folder to a GitHub repository (steps below).
+2. In the [Cloudflare dashboard](https://dash.cloudflare.com) → **Workers & Pages → Create → Pages → Connect to Git**.
+3. Select the repository.
+4. Build settings:
+   - **Framework preset:** None
+   - **Build command:** *(leave empty)*
+   - **Build output directory:** `/`
+5. Click **Save and Deploy**. Your site goes live at `https://<project>.pages.dev` with SSL enabled automatically.
+6. When you buy a domain, add it under **Custom domains** in the Pages project.
+
+## Deploy — Option B: GitHub Pages
+
+1. Push to GitHub (below).
+2. Repo → **Settings → Pages → Source: Deploy from a branch** → branch `main`, folder `/ (root)` → Save.
+3. Site goes live at `https://<username>.github.io/<repo>/`.
+
+## Push to GitHub
+
+```bash
+cd digismartz-website
+git init
+git add .
+git commit -m "Initial website for Digismartz Technologies"
+git branch -M main
+git remote add origin https://github.com/<your-username>/<your-repo>.git
+git push -u origin main
+```
+
+## Before launch — TODO
+
+- [ ] **Forms:** The contact/consultation and newsletter forms currently show a confirmation message only. Connect them to a backend such as [Web3Forms](https://web3forms.com), [Formspree](https://formspree.io), or a Cloudflare Worker (add your endpoint to the `<form action="...">` and remove the `data-demo` attribute in the HTML and the demo handler in `js/main.js`).
+- [ ] **Email & address:** Update the placeholders on `contact.html` and in the footer when available.
+- [ ] **Google Maps:** Replace the map placeholder on `contact.html` with your embed iframe.
+- [ ] **Logo:** Replace the text logo in the header/footer with the provided logo image.
+- [ ] **Social links:** Replace `#` links in the footer with real profile URLs.
+- [ ] **Domain in sitemap:** Update the URLs in `sitemap.xml` and `robots.txt` after purchasing the domain.
+
+## Structure
+
+```
+├── index.html
+├── about.html
+├── services.html
+├── portfolio.html
+├── 
+├── contact.html
+├── css/style.css
+├── js/main.js
+├── robots.txt
+├── sitemap.xml
+└── README.md
+```
+
+## Revision 2.0 — implemented
+- Testimonials page/section removed; navigation is now Home | About | Services | Portfolio | Contact | Free Consultation.
+- Official Digismartz logo added to header, footer, and favicon (`assets/img/`).
+- Free Consultation button upgraded: blue gradient, white text, sheen hover animation, mobile-safe sizing.
+- Portfolio now features the four real clients (Abhirames Pickle House, Bharat Tiger Aviation, Artherya Design Works, Bombay Theatre) with their logos and services.
+- Contact form is live via Formspree (`https://formspree.io/f/xvzeavjp`) with AJAX submission, honeypot spam field, and on-page success/error messages. Required: Full Name, Email, Phone, Service, Message. Optional: Company.
+- Business address updated everywhere: Digismartz Technologies, Palayamkottai, Tirunelveli, Tamil Nadu, India (with Google Maps embed on the contact page).
+
+## Deploy (GitHub + Cloudflare Pages)
+1. Push this folder to a GitHub repository.
+2. In Cloudflare Pages: **Create project → Connect to Git**, select the repo.
+3. Framework preset: **None** · Build command: *(empty)* · Output directory: `/`.
+4. After your domain is connected, update the URLs in `sitemap.xml` and `robots.txt`.
